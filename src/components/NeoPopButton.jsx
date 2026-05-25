@@ -9,7 +9,7 @@ const NeoPopButton = ({
   fullWidth = false,
   shadowColor = null
 }) => {
-  // Styles based on variant
+  
   const variantStyles = {
     mint: {
       bg: 'bg-brand-mint',

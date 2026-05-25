@@ -20,14 +20,14 @@ function App() {
   const smoothY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Detect mobile viewport
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
-    // Track mouse move for cursor trail
+    
     const handleMouseMove = (e) => {
       cursorX.set(e.clientX - 100); // 100px offset for center of the 200px blob
       cursorY.set(e.clientY - 100);
@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="bg-pitch-black text-white relative min-h-screen overflow-x-hidden font-sans select-none antialiased">
       
-      {/* Premium Mouse Follower (Only on Desktop) */}
+      
       {!isMobile && (
         <motion.div
           className="fixed w-[200px] h-[200px] rounded-full bg-brand-mint/5 pointer-events-none blur-[60px] z-30 mix-blend-screen"
@@ -57,29 +57,27 @@ function App() {
         />
       )}
 
-      {/* Floating Header */}
+      
       <Navbar />
 
-      {/* Cinematic Content Sequence */}
+      
       <main className="relative z-10 w-full flex flex-col items-center">
         
-        {/* Section 1: Hero Cover */}
+        
         <HeroSection />
-
-        {/* Section 2: Features Showcase Grid */}
         <FeaturesShowcase />
 
-        {/* Section 3: 3D Parallax Customizer Simulator */}
+        
         <div id="simulator" className="w-full">
           <InteractiveCardSimulator />
         </div>
 
-        {/* Section 4: Gamified Compound Savings Calculator */}
+        
         <RewardCalculator />
 
       </main>
 
-      {/* Structured compliance & links Footer */}
+      
       <Footer />
 
     </div>

@@ -4,7 +4,7 @@ import { Sparkles, ShieldCheck, Trophy, ArrowRight } from 'lucide-react';
 import NeoPopButton from './NeoPopButton';
 
 const HeroSection = () => {
-  // Anim container variants
+  
   const containerVariants = {
     hidden: {},
     visible: {
@@ -14,7 +14,7 @@ const HeroSection = () => {
     }
   };
 
-  // Line mask slide variants
+  
   const lineSlideUp = {
     hidden: { y: '120%', rotate: 2 },
     visible: {
@@ -42,21 +42,21 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-28 pb-16 px-4 md:px-8 overflow-hidden grid-overlay border-b border-white/5">
       
-      {/* Background Glowing Ambient Blobs */}
+      
       <div className="absolute top-[20%] left-[-10%] w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-brand-pink/15 rounded-full blur-[130px] animate-pulse-slow pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-brand-mint/15 rounded-full blur-[130px] animate-pulse-slow pointer-events-none" />
 
-      {/* Main Grid Content */}
+      
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
-        {/* Left Column: Typography Slide Reveals */}
+        
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="lg:col-span-7 flex flex-col space-y-8 text-left"
         >
-          {/* Micro-badge */}
+          
           <motion.div 
             variants={fadeUp}
             className="inline-flex items-center gap-2 border border-white/10 px-3.5 py-1.5 backdrop-blur bg-white/5 w-fit"
@@ -67,7 +67,7 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          {/* Heading with elegant mask overflow reveal */}
+        
           <div className="space-y-1">
             <div className="overflow-hidden py-1">
               <motion.h1 
@@ -87,7 +87,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Premium Sub-text */}
+        
           <motion.p 
             variants={fadeUp}
             className="text-white/60 text-sm md:text-base lg:text-lg max-w-xl font-sans font-light leading-relaxed"
@@ -95,7 +95,7 @@ const HeroSection = () => {
             Join over 15 million+ high-trust individuals who pay credit bills, compound absolute cashbacks, and unlock unprecedented luxury reward ecosystems every single day.
           </motion.p>
 
-          {/* Quick Metrics Tag */}
+          
           <motion.div 
             variants={fadeUp}
             className="grid grid-cols-3 gap-4 border-y border-white/5 py-4 max-w-lg"
@@ -114,7 +114,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Twin NeoPOP Call to Actions */}
+          
           <motion.div 
             variants={fadeUp}
             className="flex flex-col sm:flex-row gap-4 pt-2"
@@ -143,9 +143,9 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Floating 3D layered metallic cards mockup */}
+        
         <div className="lg:col-span-5 flex justify-center items-center relative h-[380px] md:h-[480px]">
-          {/* Drifting Card 1: Rose Gold */}
+          
           <motion.div
             initial={{ opacity: 0, x: 80, y: 40, rotate: 12 }}
             animate={{ 
@@ -166,7 +166,7 @@ const HeroSection = () => {
             <div className="font-heading font-extrabold text-sm tracking-widest text-white/90">CRED SELECT</div>
           </motion.div>
 
-          {/* Drifting Card 2: Obsidian Gold */}
+          
           <motion.div
             initial={{ opacity: 0, x: -20, y: -40, rotate: -8 }}
             animate={{ 
@@ -187,7 +187,7 @@ const HeroSection = () => {
             <div className="font-heading font-extrabold text-sm tracking-widest text-white/90">MEMBER RESERVE</div>
           </motion.div>
 
-          {/* Drifting Card 3: Emerald Mint */}
+          
           <motion.div
             initial={{ opacity: 0, y: 120, rotate: -20 }}
             animate={{ 
@@ -210,7 +210,7 @@ const HeroSection = () => {
 
       </div>
 
-      {/* Floating visual footer marker */}
+  
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}

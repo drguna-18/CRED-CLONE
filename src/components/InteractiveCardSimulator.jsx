@@ -75,7 +75,7 @@ const InteractiveCardSimulator = () => {
 
   const activeFinish = CARD_FINISHES[selectedFinish];
 
-  // Capture mouse move to generate 3D tilt and sheen reflection
+  
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
     const card = cardRef.current;
@@ -83,15 +83,15 @@ const InteractiveCardSimulator = () => {
     const width = rect.width;
     const height = rect.height;
 
-    // Mouse coordinates relative to card center
+    
     const mouseX = e.clientX - rect.left - width / 2;
     const mouseY = e.clientY - rect.top - height / 2;
 
-    // Degrees of rotation (max 18 degrees)
+  
     const rotateY = (mouseX / (width / 2)) * 18;
     const rotateX = -(mouseY / (height / 2)) * 18;
 
-    // Calculate light source (sheen position)
+    
     const sheenX = ((e.clientX - rect.left) / width) * 100;
     const sheenY = ((e.clientY - rect.top) / height) * 100;
 
@@ -120,7 +120,7 @@ const InteractiveCardSimulator = () => {
 
   return (
     <section className="relative w-full py-20 px-4 md:px-8 border-b border-white/5 flex flex-col items-center justify-center overflow-hidden">
-      {/* Dynamic Background Glow matching current card finish */}
+      
       <div 
         className="absolute w-[600px] h-[600px] rounded-full blur-[160px] opacity-20 pointer-events-none transition-all duration-700 ease-in-out"
         style={{
@@ -131,7 +131,7 @@ const InteractiveCardSimulator = () => {
 
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
         
-        {/* LEFT COLUMN: Texts and Controls */}
+        
         <div className="lg:col-span-6 flex flex-col space-y-8 order-2 lg:order-1 text-left">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.25em] font-heading font-extrabold text-white/50">
@@ -146,7 +146,7 @@ const InteractiveCardSimulator = () => {
             </p>
           </div>
 
-          {/* Finish Selectors */}
+        
           <div className="space-y-3">
             <span className="text-xs font-heading font-bold text-white/40 tracking-wider block uppercase">
               1. Select Alloy Finish
@@ -177,7 +177,7 @@ const InteractiveCardSimulator = () => {
             </div>
           </div>
 
-          {/* Benefit Toggles */}
+          
           <div className="space-y-3">
             <span className="text-xs font-heading font-bold text-white/40 tracking-wider block uppercase">
               2. Explore Privilege Modules
@@ -225,14 +225,14 @@ const InteractiveCardSimulator = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: 3D Credit Card */}
+        
         <div className="lg:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2">
-          {/* Card Wrapper for Perspective */}
+          
           <div 
             className="w-full max-w-[420px] aspect-[1.586/1] cursor-pointer"
             style={{ perspective: 1200 }}
           >
-            {/* The Actual Credit Card */}
+          
             <div
               ref={cardRef}
               onMouseMove={handleMouseMove}
@@ -247,19 +247,19 @@ const InteractiveCardSimulator = () => {
                 boxShadow: `0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px ${activeFinish.glowColor}`,
               }}
             >
-              {/* Card Holographic Sheen Layer */}
+              
               <div 
                 className="absolute inset-0 pointer-events-none transition-opacity duration-150 rounded-[20px]"
                 style={sheenStyle}
               />
 
-              {/* Glowing Aura Blob inside Card */}
+              
               <div 
                 className="absolute -right-20 -bottom-20 w-60 h-60 rounded-full blur-[60px] opacity-40 transition-all duration-700 pointer-events-none"
                 style={{ background: activeFinish.glowColor }}
               />
 
-              {/* CARD HEADER */}
+              
               <div className="flex justify-between items-start z-10" style={{ transform: 'translateZ(30px)' }}>
                 <div className="space-y-1">
                   <span className="text-[9px] md:text-[10px] font-heading font-extrabold tracking-[0.2em] text-white/70 block">
@@ -272,22 +272,22 @@ const InteractiveCardSimulator = () => {
                     </span>
                   </div>
                 </div>
-                {/* Micro-Contactless/NFC Indicator */}
+                
                 <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center bg-black/40 backdrop-blur-md">
                   <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 </div>
               </div>
 
-              {/* CARD MIDDLE: Chip & Privilege Feature */}
+              
               <div className="flex justify-between items-end z-10" style={{ transform: 'translateZ(45px)' }}>
-                {/* Plastic Metallic Chip */}
+                
                 <div className={`w-12 h-9 rounded-md ${activeFinish.chipColor} relative overflow-hidden border border-black/20 shadow-inner flex items-center justify-center`}>
                   <Cpu className="w-7 h-7 text-black/40" />
-                  {/* Holographic Chip Lines */}
+                  
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
                 </div>
 
-                {/* Animated active benefit state on card */}
+                
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeBenefit}
@@ -306,7 +306,7 @@ const InteractiveCardSimulator = () => {
                 </AnimatePresence>
               </div>
 
-              {/* CARD FOOTER: Member Name and Brand */}
+              
               <div className="flex justify-between items-end z-10" style={{ transform: 'translateZ(35px)' }}>
                 <div className="space-y-1">
                   <div className="font-heading text-xs md:text-sm tracking-[0.18em] uppercase text-white font-extrabold">
@@ -328,7 +328,7 @@ const InteractiveCardSimulator = () => {
             </div>
           </div>
 
-          {/* Quick Apply CTA */}
+          
           <div className="mt-8 flex flex-col items-center space-y-2">
             <NeoPopButton 
               variant={selectedFinish === 'obsidian' ? 'yellow' : selectedFinish === 'mint' ? 'mint' : 'pink'}

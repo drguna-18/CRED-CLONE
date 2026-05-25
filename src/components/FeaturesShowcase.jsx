@@ -55,7 +55,7 @@ const FEATURE_CARDS = [
 ];
 
 const FeaturesShowcase = () => {
-  // Container stagger options
+  
   const containerVariants = {
     hidden: {},
     visible: {
@@ -65,7 +65,7 @@ const FeaturesShowcase = () => {
     }
   };
 
-  // Card slide up transition
+  
   const cardSlideUp = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -81,13 +81,13 @@ const FeaturesShowcase = () => {
   return (
     <section id="privileges" className="relative w-full py-24 px-4 md:px-8 bg-deep-dark border-b border-white/5 overflow-hidden">
       
-      {/* Background glow matrix */}
+    
       <div className="absolute top-[40%] right-[-15%] w-[400px] h-[400px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-15%] w-[400px] h-[400px] bg-brand-purple/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto space-y-16 relative z-10">
         
-        {/* Section Header */}
+        
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 text-left">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.25em] font-heading font-extrabold text-white/50 block">
@@ -103,7 +103,6 @@ const FeaturesShowcase = () => {
           </p>
         </div>
 
-        {/* Features Card Grid */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -129,10 +128,9 @@ const FeaturesShowcase = () => {
                   boxShadow: '0px 0px 0px 0px transparent'
                 }}
               >
-                {/* Top: Icon + Badge */}
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    {/* Reusable premium icon frame */}
+                
                     <div className="w-12 h-12 border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors">
                       <Icon className={`w-6 h-6 text-white`} style={{ color: card.accentColor }} />
                     </div>
@@ -141,7 +139,7 @@ const FeaturesShowcase = () => {
                     </span>
                   </div>
 
-                  {/* Feature Title */}
+                  
                   <div className="space-y-3">
                     <h3 className="text-2xl md:text-3xl font-heading font-black tracking-tight text-white uppercase leading-none">
                       {card.title}
@@ -152,7 +150,7 @@ const FeaturesShowcase = () => {
                   </div>
                 </div>
 
-                {/* Bottom: Custom bullet items & link */}
+                
                 <div className="mt-8 pt-6 border-t border-white/5 space-y-4">
                   <div className="grid grid-cols-1 gap-2">
                     {card.bullets.map((bullet, index) => (
@@ -163,7 +161,7 @@ const FeaturesShowcase = () => {
                     ))}
                   </div>
 
-                  {/* Mini-Arrow CTA */}
+                  
                   <div className="flex items-center gap-2 text-[10px] font-heading font-extrabold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors pt-2 cursor-pointer">
                     <span>operational parameters</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" style={{ color: card.accentColor }} />
@@ -175,7 +173,7 @@ const FeaturesShowcase = () => {
           })}
         </motion.div>
 
-        {/* Global CTA Banner */}
+        
         <div className="pt-8 flex flex-col items-center justify-center space-y-4">
           <p className="text-xs text-white/40 uppercase font-heading font-bold tracking-widest text-center">
             ★ standard data encryption protocols: AES-GCM 256-bit bank-grade integrations

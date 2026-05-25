@@ -9,7 +9,7 @@ const RewardCalculator = () => {
   const [jackpotRunning, setJackpotRunning] = useState(false);
   const [jackpotResult, setJackpotResult] = useState('');
 
-  // Math conversions
+  
   const coinsEarned = Math.floor(spend * 12);
   const cashSaved = Math.floor(spend * 0.03 * 12);
   const luxurySavings = Math.floor(spend * 0.05 * 12);
@@ -20,7 +20,7 @@ const RewardCalculator = () => {
     setShowJackpot(true);
     setJackpotResult('');
     
-    // Simulate spinning Jackpot
+    
     setTimeout(() => {
       setJackpotRunning(false);
       setJackpotResult('₹5,000 CASH BACK');
@@ -30,12 +30,12 @@ const RewardCalculator = () => {
   return (
     <section id="rewards" className="relative w-full py-24 px-4 md:px-8 border-b border-white/5 overflow-hidden">
       
-      {/* Background radial highlight */}
+      
       <div className="absolute top-[30%] left-[20%] w-[500px] h-[500px] bg-brand-yellow/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
         
-        {/* LEFT COLUMN: The Interactive Slider Card */}
+        
         <div className="lg:col-span-7 space-y-8 text-left">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.25em] font-heading font-extrabold text-white/50 block">
@@ -50,11 +50,11 @@ const RewardCalculator = () => {
             </p>
           </div>
 
-          {/* Interactive Calculator Block */}
+          
           <div className="p-6 md:p-8 border border-white/5 bg-black/60 backdrop-blur-md relative">
             <div className="space-y-6">
               
-              {/* Slider Header */}
+              
               <div className="flex justify-between items-center">
                 <span className="text-xs font-heading font-extrabold uppercase text-white/40 tracking-wider">
                   ESTIMATED MONTHLY CARD SPEND
@@ -64,7 +64,7 @@ const RewardCalculator = () => {
                 </span>
               </div>
 
-              {/* Slider Input */}
+              
               <div className="relative pt-2">
                 <input 
                   type="range" 
@@ -79,7 +79,7 @@ const RewardCalculator = () => {
                   }}
                 />
                 
-                {/* Min / Max Markers */}
+                
                 <div className="flex justify-between text-[10px] text-white/40 font-heading font-bold mt-2 uppercase tracking-widest">
                   <span>₹5,000</span>
                   <span>₹1.5L</span>
@@ -87,7 +87,7 @@ const RewardCalculator = () => {
                 </div>
               </div>
 
-              {/* Grid of details calculated live */}
+              
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/5">
                 
                 {/* Coins */}
@@ -104,7 +104,7 @@ const RewardCalculator = () => {
                   <p className="text-[9px] text-white/30 font-sans mt-0.5">At 12x multiplier</p>
                 </div>
 
-                {/* Cashback */}
+                
                 <div className="p-4 bg-white/5 border border-white/5 text-left">
                   <div className="flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-brand-mint" />
@@ -118,7 +118,7 @@ const RewardCalculator = () => {
                   <p className="text-[9px] text-white/30 font-sans mt-0.5">3% direct cash refunds</p>
                 </div>
 
-                {/* Luxury Perks */}
+                
                 <div className="p-4 bg-white/5 border border-white/5 text-left">
                   <div className="flex items-center gap-1.5">
                     <Coins className="w-3.5 h-3.5 text-brand-pink" />
@@ -138,7 +138,7 @@ const RewardCalculator = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Total yields summary & claim Jackpot */}
+        
         <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-6">
           <div className="border border-white/5 bg-gradient-to-br from-zinc-950 to-black p-6 md:p-8 w-full max-w-sm relative overflow-hidden text-left shadow-2xl">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-[35px] pointer-events-none" />
@@ -166,7 +166,7 @@ const RewardCalculator = () => {
             </div>
           </div>
 
-          {/* Gamified Jackpot Spin Button */}
+          
           <div className="w-full flex justify-center lg:justify-start">
             <NeoPopButton 
               variant="yellow" 
@@ -181,7 +181,7 @@ const RewardCalculator = () => {
 
       </div>
 
-      {/* Confetti / Jackpot Modal Overlay */}
+      
       <AnimatePresence>
         {showJackpot && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
@@ -194,7 +194,7 @@ const RewardCalculator = () => {
                 boxShadow: '8px 8px 0px 0px #FFFFFF'
               }}
             >
-              {/* Close Button */}
+              
               <button 
                 onClick={() => setShowJackpot(false)}
                 className="absolute top-4 right-4 text-white/60 hover:text-white font-heading font-black uppercase text-[10px] tracking-widest border border-white/10 px-2.5 py-1"
@@ -218,7 +218,7 @@ const RewardCalculator = () => {
                   </p>
                 </div>
 
-                {/* Spinning Jackpot Panel */}
+                
                 <div className="py-6 border-y border-white/5 bg-zinc-950 overflow-hidden relative">
                   {jackpotRunning ? (
                     <motion.div 
@@ -241,7 +241,7 @@ const RewardCalculator = () => {
                   )}
                 </div>
 
-                {/* Modal Footer Description */}
+              
                 {!jackpotRunning && (
                   <div className="space-y-4">
                     <p className="text-xs text-white/70 leading-relaxed max-w-xs mx-auto">
