@@ -37,7 +37,7 @@ const Footer = () => {
       
           <div className="lg:col-span-4 space-y-6">
             <h3 className="font-heading font-black text-3xl tracking-tighter text-white">
-              cred<span className="text-brand-pink text-sm">.</span>
+              My Cred<span className="text-brand-pink text-sm">.</span>
             </h3>
             <p className="text-xs text-white/40 leading-relaxed font-sans max-w-xs">
               CRED is an elite members-only society that unlocks luxurious cashback privileges, intelligent statement audits, and high-speed credit settlements.
